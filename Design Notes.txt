@@ -1,0 +1,44 @@
+Design Note for Autofill Disposal FOrm FP_5263_E using Excel VBA
+
+Feature needed:
+1. Look for the template via File Picker Dialogue
+2. Remember where the Template is
+3. Look for the output directory for saving the output files
+4. Automatically transfer info from Excel to PDF
+5. Attach output file & send it to designated receipient
+6. Different macro for other forms in the series (move/writeoff, etc)
+7. (Stretch goal) Integration with Maximo
+	i. Automatically look up asset in Maximo and grab the info (Probably very hard at system level, maybe with AHK)
+	ii. Manually locate the asset record and auto transfer info to Excel (Probably AHK as well)
+	
+Info needed for FP_5263_E
+1. Asset desc. Maximo has it, but usually subpar. Manual correction is usually needed
+2. Tag #. DFO Tag #, not in Maximo
+3. Manufacturer. Exists in Maximo as code, Manual input only
+4. Serial #. Exists in Maximo, copiable.
+5. Asset #. No specific field for it, should be put in to Asset Desc, see format for Asset Desc.
+6. In service date. Manual input only.
+7. RC name. Responsibiliity Center Name. (Drop down list?)
+8. RC #. Resbonsibility Center Number. (Drop down list?)
+9. Holder ID. Manual input only, can be found in Abacus?
+10. Location. Manual input only.
+11. Acquisition cost. Exists in Maximo, may require manual correction.
+12. Condition of the Asset.
+13. HazMat presence.
+* Not going to deal with the Motor Vehicle section.
+
+Formats:
+1. File Name: [Action Type] - [Asset Info] [Date].pdf
+	[Asset Type] includes:
+	Move
+	Disposal
+	Write-off
+	Addition
+2. Asset Info: [Asset #] - [Asset Detail]
+3. Asset Condition: [Status]. [Reason for Removal]
+	[Status] includes:
+	Operational
+	Scrap Value Only
+	Repair Needed
+
+	
